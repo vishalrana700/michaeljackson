@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Michael Jackson</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="something_went_wrong">Try again later. Something went wrong</string>
+    <string name="song_thumbnail">Song thumbnail</string>
+    <string name="all_songs">All</string>
+    <string name="history">History</string>
+    <string name="todo">dummy</string>
+    <string name="save_image">Save image</string>
+    <string name="author_name">Author name</string>
+    <string name="date">Date</string>
+    <string name="price">Price</string>
+</resources>

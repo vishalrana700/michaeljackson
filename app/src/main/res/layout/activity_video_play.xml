@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.video_play.VideoPlayActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/songThumbnail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/song_thumbnail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="12dp"/>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/songThumbnail"/>
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/videoView"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:background="#A6373737"
+            android:visibility="visible"
+            app:controller_layout_id="@layout/exo_playback_control_view"
+            app:player_layout_id="@layout/exo_simple_player_view"
+            app:repeat_toggle_modes="none"
+            app:show_timeout="45000"
+            app:surface_type="texture_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle"
+            android:layout_marginTop="5dp">
+
+        </com.google.android.exoplayer2.ui.PlayerView>
+
+        <ProgressBar
+            android:id="@+id/spinnerVideoDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/videoView"
+            app:layout_constraintEnd_toEndOf="@id/videoView"
+            app:layout_constraintTop_toTopOf="@id/videoView"
+            app:layout_constraintBottom_toBottomOf="@id/videoView"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAuthorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/author_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/videoView"
+            android:layout_marginTop="5dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAuthorName"
+            android:layout_marginTop="5dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/price"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
